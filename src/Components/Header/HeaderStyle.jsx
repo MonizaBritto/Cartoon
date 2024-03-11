@@ -3,10 +3,11 @@ import styled from "styled-components"
 export const StyleHeader = styled.header `
     background-color: #EDD820;
     display:flex;
-    justify-content:space-around;
+    justify-content:space-between;
     align-items:center;
     height:25vh;
     width: 100vw;
+    padding:1rem;
 `
 
 export const Logo = styled.img `
@@ -14,8 +15,8 @@ export const Logo = styled.img `
     height:4rem;
 `
 
-export const Nav = styled.nav `
-    width: 30vw;
+export const Section = styled.section `
+    width: 40vw;
     display:flex;
     justify-content:space-evenly;
 `
