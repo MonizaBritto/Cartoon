@@ -22,7 +22,7 @@ const [galeria, setgaleria] = useState([
 ])
 
     return(
-        <S.MainStyle>
+        <main>
             <S.Section>
                 <img src={Scooby} alt="Scooby" />
                 <img src={Ben10} alt="Ben10" />
@@ -35,7 +35,7 @@ const [galeria, setgaleria] = useState([
                 ))}
             </S.Section2>
             <Programacao/>
-        </S.MainStyle>
+        </main>
     )
 }
 

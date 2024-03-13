@@ -1,9 +1,5 @@
 import styled from "styled-components"
 
-export const MainStyle = styled.main `
-    border:2px solid red;
-`
-
 export const Section = styled.section `
     display:flex;
     justify-content:space-evenly;
