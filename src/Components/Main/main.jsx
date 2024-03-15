@@ -17,6 +17,9 @@ function Main(){
 //Sintaxe useState
 //const [estado, setestado] = useState()
 
+const [galeria1, setgaleria1] = useState([
+    Scooby, Ben10, Looney
+])
 const [galeria, setgaleria] = useState([
     Gumball, Power, Tom
 ])
@@ -24,9 +27,9 @@ const [galeria, setgaleria] = useState([
     return(
         <main>
             <S.Section>
-                <img src={Scooby} alt="Scooby" />
-                <img src={Ben10} alt="Ben10" />
-                <img src={Looney} alt="Looney" />
+               {galeria1.map((item)=>(
+                <S.Img src={item} alt= ''/>
+            ))}
             </S.Section>
 
             <S.Section2>

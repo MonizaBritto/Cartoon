@@ -14,42 +14,43 @@ import * as S from "./programaçãoStyle"
 
 function Programacao(){
 
-const [desenhos, setdesenhos] = useState([
-    {nome: 'O laboratório de Dexter', hora: '7:30h', imagem: Dexter},
-    {nome: "A Vaca e o Frago", hora: "6:00h", imagem: Vaca}, 
-    {nome: "Du, Dudu e Edu", hora: "9:00h", imagem: Du},
-    {nome: "Coragem, o cão covarde", hora: "10:00h", imagem: Coragem}
-])
+    const [desenhos, setDesenhos] = useState([
+        { nome: "O LABORATÓRIO DE DEXTER", hora: "7:00h ", imagem: Dexter, desenhosManha: true },
+        { nome: "A VACA E O FRANGO", hora: "8:00h ", imagem: Vaca, desenhosManha: true },
+        { nome: "DU, DUDU E EDU", hora: "9:00h ", imagem: Du, desenhosManha: true },
+        { nome: "CORAGEM, O CÃO COVARDE", hora: "10:00h ", imagem: Coragem, desenhosManha: true },
+        { nome: "IRMÃO DO JOREL", hora: "11:00h ", imagem: Jorel, desenhosManha: true },
+        { nome: "TURMA DA MÔNICA JOVEM", hora: "12:00h ", imagem: Turma, desenhosManha: false },
+        { nome: "STEVEN UNIVERSO", hora: "13:00h ", imagem: Steven, desenhosManha: false },
+        { nome: "BILLY E MANDY", hora: "14:00h ", imagem: Billy, desenhosManha: false }
+    ])
 
-const [desenhos2, setdesenhos2] = useState([
-    {nome: 'Irmão Do Jorel', hora: '11:00', imagem: Jorel},
-    {nome: 'Turma da Mônica Jovem', hora:'12:00', imagem: Turma},
-    {nome: 'Steven Universo', hora:'13:00', imagem: Steven},
-    {nome: 'Billy e Mandy', hora:'14:00', imagem: Billy}
-])
+const desenhosAntesMeioDia = desenhos.filter((item) => item.desenhosManha === true)
 
     return(
-        <S.MainStyle>
-       <S.Section>
-        {desenhos.map((item)=>(
+        <S.ConteudoProgramacao>
+
+        <S.SectionProgramacao>
+        {desenhos.map((item) => (
             <S.Div>
-                <h2>{item.hora}</h2>
-                <h2>{item.nome}</h2> 
-                <img src= {item.imagem} alt= ''/>
+                <h3>{item.hora} </h3>
+                <h3> {item.nome} </h3>
+                <img src={item.imagem} alt="" />
             </S.Div>
         ))}
-       </S.Section>
+        </S.SectionProgramacao>
 
-       <S.Section>
-            {desenhos2.map((item2)=>(
-                <S.Div>
-                    <h2>{item2.hora}</h2> 
-                    <h2>{item2.nome}</h2>
-                    <img src= {item2.imagem} alt= ''/>
-                </S.Div>
-            ))}
-       </S.Section>
-        </S.MainStyle>
+       <S.SectionManha>
+                {desenhosAntesMeioDia.map((item)=>(
+                    <S.CardManha>
+                    <p> {item.nome} </p>
+                    <img src={item.imagem} alt="" />
+                    </S.CardManha>
+
+                ))}
+            </S.SectionManha>
+
+        </S.ConteudoProgramacao>
     )
 }
 
